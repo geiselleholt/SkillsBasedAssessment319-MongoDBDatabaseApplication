@@ -1,8 +1,12 @@
 import mongoose from "mongoose";
 
-const clothesListSchema = new mongoose.Schema({
-  tops: {
+const clothesSchema = new mongoose.Schema({
+  userID: {
+    type: Number,
     required: true,
+  },
+  tops: {
+    // required: true,
     variety: {
       longSleeve: Number,
       shortSleeve: Number,
@@ -11,7 +15,7 @@ const clothesListSchema = new mongoose.Schema({
     },
   },
   bottoms: {
-    required: true,
+    // required: true,
     variety: {
       dress: Number,
       shorts: Number,
@@ -19,7 +23,7 @@ const clothesListSchema = new mongoose.Schema({
     },
   },
   shoes: {
-    required: true,
+    // required: true,
     variety: {
       sneakers: Number,
       dress: Number,
@@ -28,15 +32,14 @@ const clothesListSchema = new mongoose.Schema({
     },
   },
   shoes: {
-    required: true,
+    // required: true,
     variety: {
       sneakers: Number,
       dress: Number,
       casual: Number,
       beach: Number,
     },
-    },
-    descrition: String,
+  },
 });
 
-export default mongoose.model("Mammal", mammalSchema);
+export default mongoose.model("Clothes", clothesSchema);
