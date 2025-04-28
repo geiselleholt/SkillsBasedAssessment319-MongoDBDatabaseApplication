@@ -33,10 +33,7 @@
 |    PUT | /api/user/:id/           | Update a User                           |
 | DELETE | /api/user/:id            | Delete a User                           |
 |    GET | /api/user/:id            | Read one User by id                     |
-
 |    GET | /api/user/:id/clothes    | Read all Clothes Lists for one user     |
 |    GET | /api/user/:id/essentials | Read all Essentials Lists for one user  |
-
 |    GET | /api/clothes             | Read All Clothes Lists for All Users    |
-
 |    GET | /api/essentials          | Read All Essentials Lists for All Users |
