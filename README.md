@@ -26,16 +26,15 @@
 
    VERB 		 | 		  PATH 		 |  	 DESCRIPTION
 ------------ | ------------- | -------------------
-POST | /api/packingList/ | Create new Packing List and add it to the DB |
-GET | /api/packingList/ | Read All Packing Lists |
-PUT | /api/packingList/:id/ | Update a Packing List |
-DELETE | /api/packingList/:id | Delete a Packing List |
+POST | /api/user/ | Create new User and add it to the DB |
+GET | /api/user | Read All Users |
+PUT | /api/user/:id/ | Update a User |
+DELETE | /api/user/:id | Delete a User |
+GET | /api/user/:id | Read one User by id |
 
-GET | /api/packingList/:id | Read one Packing List by id |
+GET | /api/user/:id/clothes | Read all Clothes Lists for one user |
+GET | /api/user/:id/essentials | Read all Essentials Lists for one user |
 
-GET | /api/packingList/user/:userID | Read all Packling Lists for one user |
-GET | /api/packingList/user/:userID/bathroom | Read bathrooms Packing List for one user |
-GET | /api/packingList/user/:userID/essentials | Read essentials Packing List for one user |
+GET | /api/clothes | Read All Clothes Lists for All Users |
 
-DELETE | api/packingList/user/:userID | Delete a user from DB |
-
+GET | /api/essentials | Read All Essentials Lists for All Users|
