@@ -1,24 +1,23 @@
 const allUsers = [
     {
-      name: "AlexTraveler",
+      name: "TravelingMack",
       destination: "Paris",
       child: false,
-      tripDate: 2025-11-15,
+      tripDate: new Date("2024-01-05"),
     },
     {
-      name: "WanderlustJacob",
+      name: "WanderlustRachel",
       destination: "Tokyo",
-      child: true,
-      tripDate: 2021-3-22,
+      tripDate: new Date("2026-01-05"),
     },
     {
       name: "NomadMo",
       destination: "New York",
       child: false,
-      tripDate: 2025-12-10,
+      tripDate: new Date("2026-01-05"),
     },
     {
-      name: "ExplorerSarah",
+      name: "ExplorerJuniper",
       destination: "Sydney",
       child: true,
       tripDate: new Date("2026-01-05"),

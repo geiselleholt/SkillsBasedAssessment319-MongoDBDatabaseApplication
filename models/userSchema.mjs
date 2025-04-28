@@ -18,6 +18,12 @@ const userSchema = new mongoose.Schema({
   tripDate: {
     type: Date,
     required: true,
+    validate: {
+      validator: function (date) {
+        return date > new Date();
+      },
+      message: "Did you already go on this trip? Your trip date is in the past",
+    },
   },
 });
 

@@ -23,7 +23,7 @@ app.use("/api/user", userRoutes);
 
 //Seed Data
 app.get('/seed', async (req, res) => {
-    // await User.deleteMany({});
+    await User.deleteMany({});
     await User.create(allUsers);
     res.send("DataBase Seeded with Users")
 });
