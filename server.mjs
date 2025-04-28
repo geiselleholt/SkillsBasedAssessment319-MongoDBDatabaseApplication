@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { errorHandling } from './middleware/errorHandling.mjs';
 import connectionDB from './db/conn.mjs';
+import userRoutes from "./routes/userRoutes.mjs";
 // import allAnimals from "./utilities/seedData.mjs";
 // import Mammal from "./models/mammalSchema.mjs";
 
@@ -18,7 +19,7 @@ connectionDB();
 app.use(express.json());
 
 //Routes
-
+app.use("/api/user", userRoutes);
 
 //Seed
 // app.get('/seed', async (req, res) => {
