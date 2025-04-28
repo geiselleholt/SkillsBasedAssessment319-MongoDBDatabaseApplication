@@ -29,3 +29,5 @@ const allUsers = [
       tripDate: new Date("2025-09-30"),
     },
   ];
+
+export default allUsers;

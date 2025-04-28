@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 import { errorHandling } from './middleware/errorHandling.mjs';
 import connectionDB from './db/conn.mjs';
 import userRoutes from "./routes/userRoutes.mjs";
-// import allAnimals from "./utilities/seedData.mjs";
-// import Mammal from "./models/mammalSchema.mjs";
+import allUsers from './utilities/UserSeedData.mjs';
+import User from "./models/userSchema.mjs";
 
 
 //SetUps
@@ -21,12 +21,12 @@ app.use(express.json());
 //Routes
 app.use("/api/user", userRoutes);
 
-//Seed
-// app.get('/seed', async (req, res) => {
-//     await Mammal.deleteMany({});
-//     await Mammal.create(allAnimals);
-//     res.send("DataBase Seeded")
-// });
+//Seed Data
+app.get('/seed', async (req, res) => {
+    // await User.deleteMany({});
+    await User.create(allUsers);
+    res.send("DataBase Seeded with Users")
+});
 
 //Error handing middlesware
 app.use(errorHandling);
