@@ -1,143 +1,143 @@
 const allClothes = [
-  // 1. Business traveler
+  // 1. The "Laundry Day Crisis" outfit
   {
-    userID: 1001,
+    userID: 42, // The answer to life, the universe, and laundry
     tops: {
       variety: {
-        longSleeve: 3, // Dress shirts
-        shortSleeve: 2, // Polos
-        noSleeve: 0,
-        sweater: 1, // Cardigan
-      },
-    },
-    bottoms: {
-      variety: {
-        dress: 2, // Slacks
-        shorts: 0,
-        casual: 1, // Khakis
-      },
-    },
-    shoes: {
-      variety: {
-        sneakers: 1, // For walking
-        dress: 2, // Oxfords/loafers
-        casual: 0,
-        beach: 0,
-      },
-    },
-  },
-
-  // 2. Beach vacationer
-  {
-    userID: 1002,
-    tops: {
-      variety: {
-        longSleeve: 1, // Cover-up
-        shortSleeve: 5, // T-shirts
-        noSleeve: 3, // Tank tops
-        sweater: 0,
-      },
-    },
-    bottoms: {
-      variety: {
-        dress: 0,
-        shorts: 4,
-        casual: 2, // Lightweight pants
-      },
-    },
-    shoes: {
-      variety: {
-        sneakers: 1,
-        dress: 0,
-        casual: 1, // Sandals
-        beach: 1, // Flip flops
-      },
-    },
-  },
-
-  // 3. Winter traveler
-  {
-    userID: 1003,
-    tops: {
-      variety: {
-        longSleeve: 4, // Thermal shirts
+        longSleeve: 0,
         shortSleeve: 0,
-        noSleeve: 0,
-        sweater: 3, // Wool sweaters
-      },
+        noSleeve: 1, // Wearing a bathrobe as a top
+        sweater: 0
+      }
     },
     bottoms: {
       variety: {
-        dress: 2, // Winter pants
-        shorts: 0,
-        casual: 2, // Fleece-lined
-      },
+        dress: 0,
+        shorts: 1, // Christmas pajama shorts in July
+        casual: 0
+      }
     },
     shoes: {
       variety: {
         sneakers: 0,
-        dress: 1, // Leather boots
-        casual: 2, // Winter boots
-        beach: 0,
-      },
-    },
+        dress: 0,
+        casual: 1, // Mismatched slippers
+        beach: 0
+      }
+    }
   },
 
-  // 4. Minimalist packer
+  // 2. The "Accidental Fashion Disaster"
   {
-    userID: 1004,
+    userID: 404, // Error: Style not found
     tops: {
       variety: {
-        longSleeve: 2, // Versatile shirts
-        shortSleeve: 2,
+        longSleeve: 1, // Striped business shirt
+        shortSleeve: 0,
         noSleeve: 0,
-        sweater: 1, // All-purpose
-      },
+        sweater: 1 // Ugly Christmas sweater (in June)
+      }
     },
     bottoms: {
       variety: {
-        dress: 1, // Convertible pants
-        shorts: 1,
-        casual: 1,
-      },
+        dress: 0,
+        shorts: 1, // Gym shorts
+        casual: 0
+      }
     },
     shoes: {
       variety: {
-        sneakers: 1, // All-day walking
+        sneakers: 1, // One white, one black
         dress: 0,
-        casual: 1, // Multi-use
-        beach: 0,
-      },
-    },
+        casual: 0,
+        beach: 0
+      }
+    }
   },
 
-  // 5. Festival attendee
+  // 3. The "I WFH and Nobody Can Stop Me" Collection
   {
-    userID: 1005,
+    userID: 1337, // Elite hacker attire
     tops: {
       variety: {
-        longSleeve: 1, // For cool nights
-        shortSleeve: 3,
-        noSleeve: 4, // Crop tops/bralettes
-        sweater: 0,
-      },
+        longSleeve: 0,
+        shortSleeve: 1, // Same Zoom shirt for 3 days
+        noSleeve: 0,
+        sweater: 0
+      }
     },
     bottoms: {
       variety: {
-        dress: 2, // Sundresses
-        shorts: 3,
-        casual: 1, // Jeans
-      },
+        dress: 0,
+        shorts: 0,
+        casual: 1 // Pajama pants with tacos print
+      }
     },
     shoes: {
       variety: {
-        sneakers: 1, // Comfort
+        sneakers: 0,
         dress: 0,
-        casual: 2, // Stylish sandals
-        beach: 1, // For water areas
-      },
-    },
+        casual: 0,
+        beach: 1 // Fuzzy bunny slippers
+      }
+    }
   },
+
+  // 4. The "Dressed by a Colorblind Toddler"
+  {
+    userID: 777, // Lucky? Not for fashion
+    tops: {
+      variety: {
+        longSleeve: 1, // Polka dots
+        shortSleeve: 1, // Horizontal stripes (worn underneath)
+        noSleeve: 0,
+        sweater: 0
+      }
+    },
+    bottoms: {
+      variety: {
+        dress: 1, // Worn as a skirt over pants
+        shorts: 0,
+        casual: 1 // Plaid pants
+      }
+    },
+    shoes: {
+      variety: {
+        sneakers: 1, // Neon green
+        dress: 1, // Formal oxfords (different colors)
+        casual: 0,
+        beach: 0
+      }
+    }
+  },
+
+  // 5. The "Emergency Clothing Situation"
+  {
+    userID: 911, // Fashion emergency
+    tops: {
+      variety: {
+        longSleeve: 0,
+        shortSleeve: 0,
+        noSleeve: 1, // Beach towel safety-pinned as a toga
+        sweater: 0
+      }
+    },
+    bottoms: {
+      variety: {
+        dress: 1, // Curtains repurposed as a toga
+        shorts: 0,
+        casual: 0
+      }
+    },
+    shoes: {
+      variety: {
+        sneakers: 0,
+        dress: 0,
+        casual: 0,
+        beach: 1 // Bread bags secured with rubber bands
+      }
+    }
+  }
 ];
 
 export default allClothes;

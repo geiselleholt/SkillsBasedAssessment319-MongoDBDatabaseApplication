@@ -1,52 +1,67 @@
 const allEssentials = [
+  // 1. The "I Thought My License Was Optional" Traveler
   {
-    userID: 1001,
+    userID: 911, // Emergency number for a reason
     travelId: {
-      driversLicence: true,
+      driversLicence: false // "Do I really need it for an international flight?"
     },
     passport: {
-      isAvailable: true,
-      expirationDate: new Date("2025-12-31"), // Future date
+      hasPassport: true,
+      expirationDate: new Date('2023-01-01') // Expired 2 years ago (validation will fail)
     },
-    travelDocs: ["Plane Ticket", "Hotel Reservation"],
+    travelDocs: ["Plane Ticket"] // One-way ticket to disappointment
   },
+
+  // 2. The Overconfident Road Tripper
   {
-    userID: 1002,
+    userID: 42, // Thinks he knows the answer to everything
     travelId: {
-      driversLicence: false,
-    },
-    travelDocs: ["Car Rental Reservation"],
-  },
-  {
-    userID: 1003,
-    travelId: {
-      driversLicence: true,
+      driversLicence: true // ...but it's actually his library card
     },
     passport: {
-      isAvailable: false,
-      expirationDate: new Date("2023-01-15"), // Past expiration (for testing)
+      hasPassport: false // "We're driving to Canada, right?"
     },
-    travelDocs: [], // Empty array allowed
+    travelDocs: ["Car Rental Reservation"] // For a car they can't legally drive
   },
+
+  // 3. The "Fake It Till You Make It" Vacationer
   {
-    userID: 1004,
+    userID: 007, // Licensed to... improvise?
     travelId: {
-      driversLicence: false,
+      driversLicence: true // Photoshop is a skill
     },
     passport: {
-      isAvailable: true,
-      expirationDate: new Date("2026-05-20"),
+      hasPassport: true,
+      expirationDate: new Date('2099-12-31') // Suspiciously far future date
     },
-    travelDocs: ["Plane Ticket", "Hotel Reservation", "Car Rental Reservation"],
+    travelDocs: ["Hotel Reservation", "Plane Ticket"] // Both under the name "James Bond"
   },
+
+  // 4. The Unprepared Honeymooner
   {
-    userID: 1005,
+    userID: 1313, // Unlucky number
     travelId: {
-      driversLicence: true,
+      driversLicence: true // But it's in their maiden name
     },
-    passport: null,
-    travelDocs: null, // Will be converted to empty array by Mongoose
+    passport: {
+      hasPassport: true,
+      expirationDate: new Date() // Literally expires today ("But it's still valid!")
+    },
+    travelDocs: [] // "I thought YOU booked everything, honey!"
   },
+
+  // 5. The Time Traveler (From 1999)
+  {
+    userID: 1999, // Back to the future
+    travelId: {
+      driversLicence: true // Polaroid photo laminated as ID
+    },
+    passport: {
+      hasPassport: true,
+      expirationDate: new Date('2001-01-01') // Y2K compliant!
+    },
+    travelDocs: ["Plane Ticket"] // Paper ticket purchased at a physical travel agency
+  }
 ];
 
 export default allEssentials;

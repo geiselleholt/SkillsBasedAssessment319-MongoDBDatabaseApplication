@@ -6,12 +6,12 @@ import connectionDB from "./db/conn.mjs";
 import userRoutes from "./routes/userRoutes.mjs";
 import clothesRoutes from "./routes/userRoutes.mjs";
 import essentialsRoutes from "./routes/userRoutes.mjs";
-import allUsers from "./utilities/UserSeedData.mjs";
+import allUsers from "./utilities/userSeedData.mjs";
 import User from "./models/userSchema.mjs";
 import allClothes from "./utilities/clothesSeedData.mjs";
-import Clothes from "./models/ClothesSchema.mjs";
+import Clothes from "./models/clothesSchema.mjs";
 import allEssentials from "./utilities/essentialsSeedData.mjs";
-import Essentials from "./models/EssentialsSchema.mjs";
+import Essentials from "./models/essentialsSchema.mjs";
 
 //SetUps
 dotenv.config();
