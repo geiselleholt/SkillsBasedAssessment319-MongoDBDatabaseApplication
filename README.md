@@ -1,6 +1,6 @@
 # Hafa Adai 🪸🌊
 
-### Welcome again on my tech learning journey! This week's stop... MongoDB and Mongoose! For this assignment I have developed a backend with lots of routes using JavaScript. Its connected to a MongoDB database that stores Packing Lists for trips. My collecstions are Users, Clothes Lists and Essentials List and I created some seed data for each collection that can be populated in MongoDB using their seed routes. Each user can have multiple lists of each kind for all their different trips. I created routes to do all kinds of searches. There's a table below. Enjoy list making!
+#### Welcome again on my tech learning journey! This week's stop... MongoDB and Mongoose! For this assignment I have developed a backend with lots of routes using JavaScript. Its connected to a MongoDB database that stores Packing Lists for trips. My collecstions are Users, Clothes Lists and Essentials List and I created some seed data for each collection that can be populated in MongoDB using their seed routes. Each user can have multiple lists of each kind for all their different trips. I created routes to do all kinds of searches. There's a table below. Enjoy list making!
 
 ### OBJECTIVES:
 - Create a server application with Node, Express, and MongoDB.
