@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   res.json(allUseres);
 });
 
-//read one
+//read one user
 router.get("/:id", async (req, res) => {
   const oneUser = await User.findById(req.params.id, req.body, {
     new: true,
@@ -27,6 +27,19 @@ router.get("/:id", async (req, res) => {
 
   res.json(oneUser);
 });
+
+// //read all clothes lists for one user
+// router.get("/:id/clothes", async (req, res) => {
+//   const oneUser = await User.findById(req.params.id, req.body, {
+//     new: true,
+//   });
+
+//   if (!oneUser) {
+//     res.status(400).json({ msg: "User not found" });
+//   }
+
+//   res.json(oneUser);
+// });
 
 //update
 router.put("/:id", async (req, res) => {

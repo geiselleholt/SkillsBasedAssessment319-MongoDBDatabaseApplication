@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   res.json(allEssentialses);
 });
 
-//read one
+//read one essentials list
 router.get("/:id", async (req, res) => {
   const oneEssentials = await Essentials.findById(req.params.id, req.body, {
     new: true,

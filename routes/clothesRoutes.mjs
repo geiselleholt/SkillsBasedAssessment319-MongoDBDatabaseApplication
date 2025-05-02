@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   res.json(allClotheses);
 });
 
-//read one
+//read one clothes list
 router.get("/:id", async (req, res) => {
   const oneClothes = await Clothes.findById(req.params.id, req.body, {
     new: true,

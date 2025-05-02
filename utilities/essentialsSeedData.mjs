@@ -26,7 +26,7 @@ const allEssentials = [
 
   // 3. The "Fake It Till You Make It" Vacationer
   {
-    userID: 007, // Licensed to... improvise?
+    userID: 7, // Licensed to... improvise?
     travelId: {
       driversLicence: true // Photoshop is a skill
     },
