@@ -42,7 +42,7 @@
 - Level of effort displayed in creativity and user experience. ✅
   - So many routes users won't know what to with themselves
 
-### ROUTE Referance
+### ROUTE Reference
 
 | VERB   | PATH                     | DESCRIPTION                                  |
 | ------ | ------------------------ | -------------------------------------------- |
@@ -64,6 +64,5 @@
 | DELETE | /api/essentials/:id      | Delete a Essentials List                     |
 | GET    | /api/essentials/:id      | Read one Essentials List by id               |
 
-### Acknowledgemts
-
+### Acknowledgments
 - Seed data generated using Chat GPT
