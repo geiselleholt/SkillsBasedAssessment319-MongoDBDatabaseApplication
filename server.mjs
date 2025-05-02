@@ -1,8 +1,9 @@
 //Imports
 import express from "express";
 import dotenv from "dotenv";
-import { errorHandling } from "./middleware/errorHandling.mjs";
 import connectionDB from "./db/conn.mjs";
+import { errorHandling } from "./middleware/errorHandling.mjs";
+import requestLog from "./middleware/requestLog.mjs";
 import userRoutes from "./routes/userRoutes.mjs";
 import clothesRoutes from "./routes/userRoutes.mjs";
 import essentialsRoutes from "./routes/userRoutes.mjs";
@@ -21,6 +22,7 @@ connectionDB();
 
 //Middleware
 app.use(express.json());
+app.use(requestLog);
 
 //Routes
 app.use("/api/user", userRoutes);

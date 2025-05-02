@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
   });
 
   if (!oneClothes) {
-    res.status(400).json({ msg: "Clothes not found" });
+    res.status(400).json({ msg: "Clothes List not found" });
   }
 
   res.json(oneClothes);
@@ -35,7 +35,7 @@ router.put("/:id", async (req, res) => {
   });
 
   if (!editClothes) {
-    res.status(400).json({ msg: "Clothes not found" });
+    res.status(400).json({ msg: "Clothes List not found" });
   }
   res.json(editClothes);
 });
@@ -45,7 +45,7 @@ router.delete("/:id", async (req, res) => {
   const deleteClothes = await Clothes.findByIdAndDelete(req.params.id);
 
   if (!deleteClothes) {
-    res.status(400).json({ msg: "Clothes not found" });
+    res.status(400).json({ msg: "Clothes List not found" });
   }
 
   res.json(deleteClothes);
