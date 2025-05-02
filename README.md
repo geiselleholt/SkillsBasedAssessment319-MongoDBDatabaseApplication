@@ -1,6 +1,8 @@
 # Hafa Adai 🪸🌊
 
-## OBJECTIVES:
+### Welcome again on my tech learning journey! This week's stop... MongoDB and Mongoose! For this assignment I have developed a backend with lots of routes using JavaScript. Its connected to a MongoDB database that stores Packing Lists for trips. My collecstions are Users, Clothes Lists and Essentials List and I created some seed data for each collection that can be populated in MongoDB using their seed routes. Each user can have multiple lists of each kind for all their different trips. I created routes to do all kinds of searches. There's a table below. Enjoy list making!
+
+### OBJECTIVES:
 - Create a server application with Node, Express, and MongoDB.
 - Create a CRUD API using Express and MongoDB.
 - Create MongoDB indexes.
@@ -8,7 +10,7 @@
 - Create MongoDB validation rules.
 - Use MongoDB validation to ensure data consistency.
 
-## REQUIREMENTS:
+### REQUIREMENTS:
 - Use at least three different data collections within the database (such as users, posts, or comments) ✅
 - Utilize reasonable data modeling practices. ✅
 - Create GET routes for all data that should be exposed to the client, using appropriate query commands to retrieve the data from the database. ✅
@@ -24,7 +26,7 @@
 - Include a README file that contains a description of your application. ✅
 - Level of effort displayed in creativity and user experience. ✅
 
-## ROUTE Referance
+### ROUTE Referance
 
 |  VERB  |    PATH                  |  	DESCRIPTION                                | 
 |--------|--------------------------|----------------------------------------------|
@@ -46,5 +48,5 @@
 | DELETE | /api/essentials/:id      | Delete a Essentials List                     |
 |    GET | /api/essentials/:id      | Read one Essentials List by id               |
 
-###Acknowledgemts
+### Acknowledgemts
 - Seed data aquired from Chat GPT
