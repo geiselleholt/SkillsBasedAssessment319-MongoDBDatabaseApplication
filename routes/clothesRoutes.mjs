@@ -11,8 +11,8 @@ router.post("/", async (req, res) => {
 
 //read
 router.get("/", async (req, res) => {
-  const allClotheses = await Clothes.find(req.body);
-  res.json(allClotheses);
+  const allClothes = await Clothes.find(req.body);
+  res.json(allClothes);
 });
 
 //read one clothes list

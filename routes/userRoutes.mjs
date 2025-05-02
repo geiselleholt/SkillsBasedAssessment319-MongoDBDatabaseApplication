@@ -1,5 +1,6 @@
 import express from "express";
 import User from "../models/userSchema.mjs";
+import Clothes from "../models/clothesSchema.mjs";
 
 const router = express.Router();
 
@@ -11,8 +12,8 @@ router.post("/", async (req, res) => {
 
 //read
 router.get("/", async (req, res) => {
-  const allUseres = await User.find(req.body);
-  res.json(allUseres);
+  const allUsers = await User.find(req.body);
+  res.json(allUsers);
 });
 
 //read one user
@@ -28,18 +29,25 @@ router.get("/:id", async (req, res) => {
   res.json(oneUser);
 });
 
-// //read all clothes lists for one user
-// router.get("/:id/clothes", async (req, res) => {
-//   const oneUser = await User.findById(req.params.id, req.body, {
-//     new: true,
-//   });
+// get all clothes list for one user
+router.get("/:id/clothes", async (req, res) => {
+  let user = req.params.id;
+  const allClothes = await Clothes.find(req.body);
+  let userClothes = [];
 
-//   if (!oneUser) {
-//     res.status(400).json({ msg: "User not found" });
-//   }
+  allClothes.forEach((clothes) => {
+    console.log(clothes.userID);
+    if (clothes.userID == req.params.id) {
+      userClothes.push(clothes);
+    }
+  });
 
-//   res.json(oneUser);
-// });
+  if (!user) {
+    res.status(400).json({ msg: "User not found" });
+  }
+
+  res.json(userClothes);
+});
 
 //update
 router.put("/:id", async (req, res) => {

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const clothesSchema = new mongoose.Schema({
   userID: {
-    type: Number,
+    type: String,
     required: true,
   },
   tops: {
