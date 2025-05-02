@@ -1,6 +1,7 @@
 import express from "express";
 import User from "../models/userSchema.mjs";
 import Clothes from "../models/clothesSchema.mjs";
+import Essentials from "../models/essentialsSchema.mjs";
 
 const router = express.Router();
 
@@ -36,7 +37,6 @@ router.get("/:id/clothes", async (req, res) => {
   let userClothes = [];
 
   allClothes.forEach((clothes) => {
-    console.log(clothes.userID);
     if (clothes.userID == req.params.id) {
       userClothes.push(clothes);
     }
@@ -47,6 +47,25 @@ router.get("/:id/clothes", async (req, res) => {
   }
 
   res.json(userClothes);
+});
+
+// get all essentials list for one user
+router.get("/:id/essentials", async (req, res) => {
+  let user = req.params.id;
+  const allEssentials = await Essentials.find(req.body);
+  let userEssentials = [];
+
+  allEssentials.forEach((essentials) => {
+    if (essentials.userID == user) {
+      userEssentials.push(essentials);
+    }
+  });
+
+  if (!user) {
+    res.status(400).json({ msg: "User not found" });
+  }
+
+  res.json(userEssentials);
 });
 
 //update

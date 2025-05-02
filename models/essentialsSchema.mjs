@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const essentialsSchema = new mongoose.Schema({
   userID: {
-    type: Number,
+    type: String,
     required: true,
   },
   travelId: {
