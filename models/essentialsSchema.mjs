@@ -6,14 +6,15 @@ const essentialsSchema = new mongoose.Schema({
     required: true,
   },
   travelId: {
-    type: {
-      driversLicence: {
-        type: Boolean,
-        default: false,
-        required: true,
-      },
+    hasTravelID: {
+      type: Boolean,
+      default: false,
+      required: true,
     },
-    required: true,
+    hasDriversLicence: {
+      type: Boolean,
+      default: false,
+    },
   },
   passport: {
     hasPassport: {

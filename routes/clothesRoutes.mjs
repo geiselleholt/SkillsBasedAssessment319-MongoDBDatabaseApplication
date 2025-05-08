@@ -3,19 +3,25 @@ import Clothes from "../models/clothesSchema.mjs";
 
 const router = express.Router();
 
-//create
+// @desc: CREATE a Clothes list
+// @path: /api/user
+// @access: Public
 router.post("/", async (req, res) => {
   const newClothes = await Clothes.create(req.body);
   res.json(newClothes);
 });
 
-//read
+// @desc: READ all Clothes lists
+// @path: /api/user
+// @access: Public
 router.get("/", async (req, res) => {
   const allClothes = await Clothes.find(req.body);
   res.json(allClothes);
 });
 
-//read one clothes list
+// @desc: READ one Clothes list
+// @path: /api/user/:id
+// @access: Public
 router.get("/:id", async (req, res) => {
   const oneClothes = await Clothes.findById(req.params.id, req.body, {
     new: true,
@@ -28,7 +34,9 @@ router.get("/:id", async (req, res) => {
   res.json(oneClothes);
 });
 
-//update
+// @desc: UPDATE one Clothes lists
+// @path: /api/user/:id
+// @access: Public
 router.put("/:id", async (req, res) => {
   const editClothes = await Clothes.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
@@ -40,7 +48,9 @@ router.put("/:id", async (req, res) => {
   res.json(editClothes);
 });
 
-//delete
+// @desc: DELETE one Clothes lists
+// @path: /api/user/:id
+// @access: Public
 router.delete("/:id", async (req, res) => {
   const deleteClothes = await Clothes.findByIdAndDelete(req.params.id);
 

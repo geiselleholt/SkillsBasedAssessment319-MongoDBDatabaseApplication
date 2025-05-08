@@ -19,6 +19,7 @@
   "homepage": "https://github.com/geiselleholt/SkillsBasedAssessment319-MongoDBDatabaseApplication#readme",
   "description": "",
   "dependencies": {
+    "chalk": "^5.4.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongoose": "^8.14.0"

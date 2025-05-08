@@ -6,38 +6,26 @@ const clothesSchema = new mongoose.Schema({
     required: true,
   },
   tops: {
-    // required: true,
     variety: {
-      longSleeve: Number,
-      shortSleeve: Number,
-      noSleeve: Number,
-      sweater: Number,
+      longSleeve: { type: Number, default: 0 },
+      shortSleeve: { type: Number, default: 0 },
+      noSleeve: { type: Number, default: 0 },
+      sweater: { type: Number, default: 0 },
     },
   },
   bottoms: {
-    // required: true,
     variety: {
-      dress: Number,
-      shorts: Number,
-      casual: Number,
+      dress: { type: Number, default: 0 },
+      shorts: { type: Number, default: 0 },
+      casual: { type: Number, default: 0 },
     },
   },
   shoes: {
-    // required: true,
     variety: {
-      sneakers: Number,
-      dress: Number,
-      casual: Number,
-      beach: Number,
-    },
-  },
-  shoes: {
-    // required: true,
-    variety: {
-      sneakers: Number,
-      dress: Number,
-      casual: Number,
-      beach: Number,
+      sneakers: { type: Number, default: 0 },
+      dress: { type: Number, default: 0 },
+      casual: { type: Number, default: 0 },
+      beach: { type: Number, default: 0 },
     },
   },
 });

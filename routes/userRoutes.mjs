@@ -2,22 +2,29 @@ import express from "express";
 import User from "../models/userSchema.mjs";
 import Clothes from "../models/clothesSchema.mjs";
 import Essentials from "../models/essentialsSchema.mjs";
+import chalk from 'chalk';
 
 const router = express.Router();
 
-//create
+// @desc: CREATE a User
+// @path: /api/user
+// @access: Public
 router.post("/", async (req, res) => {
   const newUser = await User.create(req.body);
   res.json(newUser);
 });
 
-//read
+// @desc: READ all Users
+// @path: /api/user
+// @access: Public
 router.get("/", async (req, res) => {
   const allUsers = await User.find(req.body);
   res.json(allUsers);
 });
 
-//read one user
+// @desc: READ one User
+// @path: /api/user/:id
+// @access: Public
 router.get("/:id", async (req, res) => {
   const oneUser = await User.findById(req.params.id, req.body, {
     new: true,
@@ -30,7 +37,9 @@ router.get("/:id", async (req, res) => {
   res.json(oneUser);
 });
 
-// get all clothes list for one user
+// @desc: READ all Clothes lists for one User
+// @path: /api/user/:id/clothes
+// @access: Public
 router.get("/:id/clothes", async (req, res) => {
   let user = req.params.id;
   const allClothes = await Clothes.find(req.body);
@@ -43,13 +52,15 @@ router.get("/:id/clothes", async (req, res) => {
   });
 
   if (!user) {
-    res.status(400).json({ msg: "User not found" });
+    chalk.red(res.status(400).json({ msg: "User not found" }));
   }
 
   res.json(userClothes);
 });
 
-// get all essentials list for one user
+// @desc: READ all Essentials lists for one User
+// @path: /api/user/:id/essentials
+// @access: Public
 router.get("/:id/essentials", async (req, res) => {
   let user = req.params.id;
   const allEssentials = await Essentials.find(req.body);
@@ -62,13 +73,15 @@ router.get("/:id/essentials", async (req, res) => {
   });
 
   if (!user) {
-    res.status(400).json({ msg: "User not found" });
+    chalk.red(res.status(400).json({ msg: "User not found" }));
   }
 
   res.json(userEssentials);
 });
 
-//update
+// @desc: UPDATE one User
+// @path: /api/user/:id
+// @access: Public
 router.put("/:id", async (req, res) => {
   const editUser = await User.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
@@ -80,7 +93,9 @@ router.put("/:id", async (req, res) => {
   res.json(editUser);
 });
 
-//delete
+// @desc: DELETE one User
+// @path: /api/user/:id
+// @access: Public
 router.delete("/:id", async (req, res) => {
   const deleteUser = await User.findByIdAndDelete(req.params.id);
 

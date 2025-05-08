@@ -3,19 +3,25 @@ import Essentials from "../models/essentialsSchema.mjs";
 
 const router = express.Router();
 
-//create
+// @desc: CREATE an Essentials list
+// @path: /api/user
+// @access: Public
 router.post("/", async (req, res) => {
   const newEssentials = await Essentials.create(req.body);
   res.json(newEssentials);
 });
 
-//read
+// @desc: READ all Essentials lists
+// @path: /api/user
+// @access: Public
 router.get("/", async (req, res) => {
   const allEssentialses = await Essentials.find(req.body);
   res.json(allEssentialses);
 });
 
-//read one essentials list
+// @desc: READ one Essentials list
+// @path: /api/user/:id
+// @access: Public
 router.get("/:id", async (req, res) => {
   const oneEssentials = await Essentials.findById(req.params.id, req.body, {
     new: true,
@@ -28,7 +34,9 @@ router.get("/:id", async (req, res) => {
   res.json(oneEssentials);
 });
 
-//update
+// @desc: UPDATE one Essentials lists
+// @path: /api/user/:id
+// @access: Public
 router.put("/:id", async (req, res) => {
   const editEssentials = await Essentials.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
@@ -40,7 +48,9 @@ router.put("/:id", async (req, res) => {
   res.json(editEssentials);
 });
 
-//delete
+// @desc: DELETE one Essentials lists
+// @path: /api/user/:id
+// @access: Public
 router.delete("/:id", async (req, res) => {
   const deleteEssentials = await Essentials.findByIdAndDelete(req.params.id);
 
