@@ -26,7 +26,7 @@ router.get("/:id", async (req, res) => {
   const oneEssentials = await Essentials.findById(req.params.id);
 
   if (!oneEssentials) {
-    res.status(404).json({ msg: "Essentials list not found" });
+    return res.status(404).json({ msg: "Essentials list not found" });
   }
 
   res.json(oneEssentials);
@@ -41,7 +41,7 @@ router.put("/:id", async (req, res) => {
   });
 
   if (!editEssentials) {
-    res.status(404).json({ msg: "Essentials List not found" });
+    return res.status(404).json({ msg: "Essentials List not found" });
   }
   res.json(editEssentials);
 });
@@ -53,7 +53,7 @@ router.delete("/:id", async (req, res) => {
   const deleteEssentials = await Essentials.findByIdAndDelete(req.params.id);
 
   if (!deleteEssentials) {
-    res.status(404).json({ msg: "Essentials List not found" });
+    return res.status(404).json({ msg: "Essentials List not found" });
   }
 
   res.json(deleteEssentials);

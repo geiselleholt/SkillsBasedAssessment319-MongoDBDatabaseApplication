@@ -23,12 +23,10 @@ router.get("/", async (req, res) => {
 // @path: /api/user/:id
 // @access: Public
 router.get("/:id", async (req, res) => {
-  const oneClothes = await Clothes.findById(req.params.id, req.body, {
-    new: true,
-  });
+  const oneClothes = await Clothes.findById(req.params.id);
 
   if (!oneClothes) {
-    res.status(404).json({ msg: "Clothes List not found" });
+    return res.status(404).json({ msg: "Clothes List not found" });
   }
 
   res.json(oneClothes);
@@ -43,7 +41,7 @@ router.put("/:id", async (req, res) => {
   });
 
   if (!editClothes) {
-    res.status(404).json({ msg: "Clothes List not found" });
+    return res.status(404).json({ msg: "Clothes List not found" });
   }
   res.json(editClothes);
 });
@@ -55,7 +53,7 @@ router.delete("/:id", async (req, res) => {
   const deleteClothes = await Clothes.findByIdAndDelete(req.params.id);
 
   if (!deleteClothes) {
-    res.status(404).json({ msg: "Clothes List not found" });
+    return res.status(404).json({ msg: "Clothes List not found" });
   }
 
   res.json(deleteClothes);
