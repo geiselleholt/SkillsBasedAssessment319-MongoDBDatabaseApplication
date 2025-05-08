@@ -13,11 +13,35 @@ router.post("/", async (req, res) => {
   res.json(newUser);
 });
 
-// @desc: READ all Users
+// // @desc: READ all Users
+// // @path: /api/user
+// // @access: Public
+// router.get("/", async (req, res) => {
+//   const allUsers = await User.find(req.body);
+//   res.json(allUsers);
+// });
+
+// @desc: READ all Users with optional filtering by name, destination, or child query parameters
 // @path: /api/user
 // @access: Public
 router.get("/", async (req, res) => {
-  const allUsers = await User.find(req.body);
+  const filter = {};
+
+  if (req.query.name) {
+    filter.name = new RegExp(req.query.name, "i");
+  }
+
+  if (req.query.destination) {
+    filter.destination = new RegExp(req.query.destination, "i");
+  }
+
+  if (req.query.child.toLowerCase() === "true") {
+    filter.child = true;
+  } else if (req.query.child.toLowerCase() === "false") {
+    filter.child = false;
+  }
+
+  const allUsers = await User.find(filter);
   res.json(allUsers);
 });
 
@@ -52,7 +76,6 @@ router.get("/:id/clothes", async (req, res) => {
     }
   });
 
-
   res.json(userClothes);
 });
 
@@ -63,7 +86,7 @@ router.get("/:id/essentials", async (req, res) => {
   const oneUser = await User.findById(req.params.id);
   const allEssentials = await Essentials.find(req.body);
   let userEssentials = [];
-  console.log(oneUser)
+  console.log(oneUser);
 
   if (!oneUser) {
     return res.status(404).json({ msg: "User not found" });
@@ -89,7 +112,7 @@ router.put("/:id", async (req, res) => {
   if (!editUser) {
     return res.status(404).json({ msg: "User not found" });
   }
-  
+
   res.json(editUser);
 });
 
