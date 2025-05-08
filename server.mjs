@@ -7,12 +7,7 @@ import requestLog from "./middleware/requestLog.mjs";
 import userRoutes from "./routes/userRoutes.mjs";
 import clothesRoutes from "./routes/userRoutes.mjs";
 import essentialsRoutes from "./routes/userRoutes.mjs";
-import allUsers from "./utilities/userSeedData.mjs";
-import User from "./models/userSchema.mjs";
-import allClothes from "./utilities/clothesSeedData.mjs";
-import Clothes from "./models/clothesSchema.mjs";
-import allEssentials from "./utilities/essentialsSeedData.mjs";
-import Essentials from "./models/essentialsSchema.mjs";
+import seedRoutes from "./routes/seedRoutes.mjs"
 
 //SetUps
 dotenv.config();
@@ -28,25 +23,7 @@ app.use(requestLog);
 app.use("/api/user", userRoutes);
 app.use("/api/clothes", clothesRoutes);
 app.use("/api/essentials", essentialsRoutes);
-
-//Seed Data
-app.get("/userSeed", async (req, res) => {
-  await User.deleteMany({});
-  await User.create(allUsers);
-  res.send("DataBase Seeded with Users");
-});
-
-app.get("/clothesSeed", async (req, res) => {
-  await Clothes.deleteMany({});
-  await Clothes.create(allClothes);
-  res.send("DataBase Seeded with Clothes");
-});
-
-app.get("/essentialsSeed", async (req, res) => {
-  await Essentials.deleteMany({});
-  await Essentials.create(allEssentials);
-  res.send("DataBase Seeded with Essentials");
-});
+app.use("/seed", seedRoutes);
 
 //Error handing middlesware
 app.use(errorHandling);
