@@ -63,18 +63,12 @@ router.get("/:id", async (req, res) => {
 // @access: Public
 router.get("/:id/clothes", async (req, res) => {
   const oneUser = await User.findById(req.params.id);
-  const allClothes = await Clothes.find(req.body);
-  let userClothes = [];
 
   if (!oneUser) {
     return res.status(404).json({ msg: "User not found" });
   }
 
-  allClothes.forEach((clothes) => {
-    if (clothes.userID == oneUser._id) {
-      userClothes.push(clothes);
-    }
-  });
+  const userClothes = await Clothes.find({ userID: oneUser._id });
 
   res.json(userClothes);
 });
@@ -84,19 +78,12 @@ router.get("/:id/clothes", async (req, res) => {
 // @access: Public
 router.get("/:id/essentials", async (req, res) => {
   const oneUser = await User.findById(req.params.id);
-  const allEssentials = await Essentials.find(req.body);
-  let userEssentials = [];
-  console.log(oneUser);
 
   if (!oneUser) {
     return res.status(404).json({ msg: "User not found" });
   }
 
-  allEssentials.forEach((essentials) => {
-    if (essentials.userID == oneUser._id) {
-      userEssentials.push(essentials);
-    }
-  });
+  const userEssentials = await Essentials.find({ userID: oneUser._id });
 
   res.json(userEssentials);
 });

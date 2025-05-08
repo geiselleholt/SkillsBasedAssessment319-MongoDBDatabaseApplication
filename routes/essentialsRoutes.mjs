@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
 // @path: /api/essentials
 // @access: Public
 router.get("/", async (req, res) => {
-  const allEssentials = await Essentials.find(req.body);
+  const allEssentials = await Essentials.find();
   res.json(allEssentials);
 });
 

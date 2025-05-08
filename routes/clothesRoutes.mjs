@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
 // @path: /api/user
 // @access: Public
 router.get("/", async (req, res) => {
-  const allClothes = await Clothes.find(req.body);
+  const allClothes = await Clothes.find();
   res.json(allClothes);
 });
 
