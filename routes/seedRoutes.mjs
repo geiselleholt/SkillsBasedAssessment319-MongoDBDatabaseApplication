@@ -1,10 +1,10 @@
 import express from "express";
-import allUsers from "./utilities/userSeedData.mjs";
-import User from "./models/userSchema.mjs";
-import allClothes from "./utilities/clothesSeedData.mjs";
-import Clothes from "./models/clothesSchema.mjs";
-import allEssentials from "./utilities/essentialsSeedData.mjs";
-import Essentials from "./models/essentialsSchema.mjs";
+import allUsers from "../utilities/userSeedData.mjs";
+import User from "../models/userSchema.mjs";
+import allClothes from "../utilities/clothesSeedData.mjs";
+import Clothes from "../models/clothesSchema.mjs";
+import allEssentials from "../utilities/essentialsSeedData.mjs";
+import Essentials from "../models/essentialsSchema.mjs";
 
 const router = express.Router();
 
@@ -34,3 +34,5 @@ router.get("/essentials", async (req, res) => {
   await Essentials.create(allEssentials);
   res.send("DataBase Seeded with Essentials");
 });
+
+export default router;

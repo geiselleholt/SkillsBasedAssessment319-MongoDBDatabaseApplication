@@ -2,7 +2,7 @@ import express from "express";
 import User from "../models/userSchema.mjs";
 import Clothes from "../models/clothesSchema.mjs";
 import Essentials from "../models/essentialsSchema.mjs";
-import chalk from 'chalk';
+import chalk from "chalk";
 
 const router = express.Router();
 
@@ -26,12 +26,10 @@ router.get("/", async (req, res) => {
 // @path: /api/user/:id
 // @access: Public
 router.get("/:id", async (req, res) => {
-  const oneUser = await User.findById(req.params.id, req.body, {
-    new: true,
-  });
+  const oneUser = await User.findById(req.params.id);
 
   if (!oneUser) {
-    res.status(400).json({ msg: "User not found" });
+    return res.status(404).json({ msg: "User not found" });
   }
 
   res.json(oneUser);
@@ -41,18 +39,18 @@ router.get("/:id", async (req, res) => {
 // @path: /api/user/:id/clothes
 // @access: Public
 router.get("/:id/clothes", async (req, res) => {
-  let user = req.params.id;
+  const oneUser = await User.findById(req.params.id);
   const allClothes = await Clothes.find(req.body);
   let userClothes = [];
 
   allClothes.forEach((clothes) => {
-    if (clothes.userID == req.params.id) {
+    if (clothes.userID == oneUser._id) {
       userClothes.push(clothes);
     }
   });
 
-  if (!user) {
-    chalk.red(res.status(400).json({ msg: "User not found" }));
+  if (!oneUser) {
+    chalk.red(res.status(404).json({ msg: "User not found" }));
   }
 
   res.json(userClothes);
@@ -62,18 +60,19 @@ router.get("/:id/clothes", async (req, res) => {
 // @path: /api/user/:id/essentials
 // @access: Public
 router.get("/:id/essentials", async (req, res) => {
-  let user = req.params.id;
+  const oneUser = await User.findById(req.params.id);
   const allEssentials = await Essentials.find(req.body);
   let userEssentials = [];
+  console.log(oneUser)
 
   allEssentials.forEach((essentials) => {
-    if (essentials.userID == user) {
+    if (essentials.userID == oneUser._id) {
       userEssentials.push(essentials);
     }
   });
 
-  if (!user) {
-    chalk.red(res.status(400).json({ msg: "User not found" }));
+  if (!oneUser) {
+    chalk.red(res.status(404).json({ msg: "User not found" }));
   }
 
   res.json(userEssentials);
@@ -88,7 +87,7 @@ router.put("/:id", async (req, res) => {
   });
 
   if (!editUser) {
-    res.status(400).json({ msg: "User not found" });
+    res.status(404).json.chalk.green({ msg: "User not found" });
   }
   res.json(editUser);
 });
@@ -100,7 +99,7 @@ router.delete("/:id", async (req, res) => {
   const deleteUser = await User.findByIdAndDelete(req.params.id);
 
   if (!deleteUser) {
-    res.status(400).json({ msg: "User not found" });
+    res.status(404).json({ msg: "User not found" });
   }
 
   res.json(deleteUser);

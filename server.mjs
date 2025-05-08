@@ -5,8 +5,8 @@ import connectionDB from "./db/conn.mjs";
 import { errorHandling } from "./middleware/errorHandling.mjs";
 import requestLog from "./middleware/requestLog.mjs";
 import userRoutes from "./routes/userRoutes.mjs";
-import clothesRoutes from "./routes/userRoutes.mjs";
-import essentialsRoutes from "./routes/userRoutes.mjs";
+import clothesRoutes from "./routes/clothesRoutes.mjs";
+import essentialsRoutes from "./routes/essentialsRoutes.mjs";
 import seedRoutes from "./routes/seedRoutes.mjs"
 
 //SetUps
